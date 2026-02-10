@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Taschenrechner</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    </head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Multi-Taschenrechner</h1>
+
+        <!-- Zahl 1 -->
+        <div class="row">
+            <div class="col">
+                <label>Zahl 1</label>
+                <input type="number" id="zahl1" class="form-control">
+            </div>
+        </div>
+
+        <!-- Zahl 2 -->
+        <div class="row">
+            <div class="col">
+                <label>Zahl 2</label>
+                <input type="number" id="zahl2" class="form-control">
+            </div>
+        </div>
+
+        <!-- Ergebnis -->
+        <div class="row mt-2">
+            <div class="col">
+                <div id="ergebnis" class="border p-2">
+                    Ergebnis erscheint hier
+                </div>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="row mt-2">
+            <div class="col">
+                <button class="btn btn-outline-info" onclick="addieren()">Addition</button>
+                <button class="btn btn-outline-warning" onclick="subtrahieren()">Subtraktion</button>
+                <button class="btn btn-outline-success" onclick="multiplizieren()">Multiplikation</button>
+                <button class="btn btn-outline-danger" onclick="dividieren()">Division</button>
+            
+                
+
+            </div>
+        </div>
+        <div id="idAusgabe">Bitte drücken Sie den jeweiigen Button für die Berechnung</div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function addieren() {
+            let z1 = Number(document.getElementById("zahl1").value);
+            let z2 = Number(document.getElementById("zahl2").value);
+            document.getElementById("ergebnis").innerText = z1 + z2;
+        }
+
+        function subtrahieren() {
+            let z1 = Number(document.getElementById("zahl1").value);
+            let z2 = Number(document.getElementById("zahl2").value);
+            document.getElementById("ergebnis").innerText = z1 - z2;
+        }
+
+        function multiplizieren() {
+            let z1 = Number(document.getElementById("zahl1").value);
+            let z2 = Number(document.getElementById("zahl2").value);
+            document.getElementById("ergebnis").innerText = z1 * z2;
+        }
+
+        function dividieren() {
+            let z1 = Number(document.getElementById("zahl1").value);
+            let z2 = Number(document.getElementById("zahl2").value);
+
+            if (z2 === 0) {
+                document.getElementById("ergebnis").innerText = "Division durch 0 nicht erlaubt";
+            } else {
+                document.getElementById("ergebnis").innerText = z1 / z2;
+            }
+        }
+    </script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
+
